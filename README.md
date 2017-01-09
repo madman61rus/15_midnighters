@@ -1,7 +1,25 @@
-# Night Owls Detector
+# Поиск полуночных кодеров
 
-[TODO. There will be project description]
+Эта программа выводит список логинов людей, которые сдают на проверку
+задания на devman.org между 24.00 и 6.00 . Для работы программы
+используется API devman.org.
 
-# Project Goals
+#### Запуск программы
 
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Для запуска программы, необходимо запустить скрипт seek_dev_nighters.py
+
+```
+python seek_dev_nighters.py
+```
+
+#### Системные требования
+
+Для работы программы необходимы :
+- python >= 3.5
+- библиотека requests
+- библиотека pytz
+
+
+# Цели проекта
+
+Этот код написан с целью обучения. Курсы веб-девелоперов - [DEVMAN.org](https://devman.org)
