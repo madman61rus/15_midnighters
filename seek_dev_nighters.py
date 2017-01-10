@@ -7,8 +7,8 @@ TIME_MIDNIGHT = time(0,0,0)
 TIME_MORNING = time(6,0,0)
 
 def load_attempts(url):
-    pages = requests.get(url).json()['number_of_pages']
-    for page in range(1,pages+1):
+    count_of_pages = requests.get(url).json()['number_of_pages']
+    for page in range(1,count_of_pages+1):
         params = {'page' : page}
         response = requests.get(url,params)
         if response.status_code==200:
