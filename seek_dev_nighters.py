@@ -7,8 +7,8 @@ TIME_MIDNIGHT = time(0,0,0)
 TIME_MORNING = time(6,0,0)
 
 def load_attempts(url):
-    pages = requests.get(url)
-    for page in range(1,pages.json()['number_of_pages']+1):
+    pages = requests.get(url).json()['number_of_pages']
+    for page in range(1,pages+1):
         params = {'page' : page}
         response = requests.get(url,params)
         if response.status_code==200:
@@ -29,10 +29,8 @@ def get_midnighters(attempts):
 
 def print_midnighters(midnighters):
     print('Список полуночников : ')
-    count = 1
-    for midnighter in midnighters:
-        print('{}. {}'.format(count,midnighter))
-        count += 1
+    for counter,midnighter in list(enumerate(midnighters)):
+        print('{}. {}'.format(counter,midnighter))
 
 if __name__ == '__main__':
     url = 'https://devman.org/api/challenges/solution_attempts/'
